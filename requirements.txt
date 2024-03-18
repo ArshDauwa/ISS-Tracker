@@ -1,0 +1,7 @@
+Flask
+requests
+xmltodict
+numpy
+geopy
+pytest==8.0.0
+Flask-SQLAchemy
