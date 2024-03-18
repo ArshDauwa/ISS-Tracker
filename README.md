@@ -194,7 +194,7 @@ null,"==========================================================================
 - If Geopositon shows "Location currently unavailable" this means the epoch  Latitude and Longitude are over a body of water.
 
 
-`curl 127.0.0.1:5000/epochs/2024-090T10:58:00.000Z/now`
+`curl 127.0.0.1:5000/now`
 
 ```
 {
