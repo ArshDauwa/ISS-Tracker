@@ -15,10 +15,27 @@ This Python Flask application serves as a RESTful API for accessing real-time an
   ## Citation
 
   ### Data
-  - The ISS data comes directly from NASA's website which is the most updated and recent data regarding the International Space Station. The data is presented as a .txt and .XML, for this script, we will be using the .XML.
+  - The ISS data comes directly from NASA's website which is the most updated and recent data regarding the International Space Station. The data is presented as a .txt and .XML, for this script, we will be using the .XML:
 [     https://spotthestation.nasa.gov/trajectory_data.cfm 
 ](https://nasa-public-data.s3.amazonaws.com/iss-coords/current/ISS_OEM/ISS.OEM_J2K_EPH.xml)https://nasa-public-data.s3.amazonaws.com/iss-coords/current/ISS_OEM/ISS.OEM_J2K_EPH.xml
 
+Click the link above to download the data and save it to the same folder as your python script.
+
+## How to Run
+
+### Containerized App
+- To begin, head over to the directory that contains both the Dockerfile and the docker-compose.yml files.
+- Build the Docker image using the command:
+  
+  `docker build -t username/flask-app:1.0 .`
+
+  Replace username and flask-app with your own respective information.
+
+- Then run the following Docker command which will start the container and run the Flask app inside of it.
+     
+  `docker-compose up`
+
+  
 
 
 
