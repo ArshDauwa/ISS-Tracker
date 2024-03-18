@@ -12,6 +12,12 @@ This Python Flask application serves as a RESTful API for accessing real-time an
 -`requirements.txt`: Lists the Python packages and versions required by the ISS tracking system, facilitating easy installation of dependencies.
 - `test/test_iss_tracker.py`: Contains unit tests for the iss_tracker.py script, verifying its functionality and ensuring the reliability of the API's endpoints.
 
+  ## Citation
+
+  ### Data
+  - The ISS data comes directly from NASA's website which is the most updated and recent data regarding the International Space Station. The data is presented as a .txt and .XML, for this script, we will be using the .XML.
+[     https://spotthestation.nasa.gov/trajectory_data.cfm 
+](https://nasa-public-data.s3.amazonaws.com/iss-coords/current/ISS_OEM/ISS.OEM_J2K_EPH.xml)https://nasa-public-data.s3.amazonaws.com/iss-coords/current/ISS_OEM/ISS.OEM_J2K_EPH.xml
 
 
 
