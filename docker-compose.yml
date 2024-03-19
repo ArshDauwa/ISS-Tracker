@@ -1,11 +1,13 @@
-version: '3.8'
+---
+version: "3"
 
 services:
-  app:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - FLASK_APP=iss_tracker.py
-      - FLASK_ENV=development
-    command: flask run --host=0.0.0.0
+   iss_tracker_flask-app:
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        image: arshdauwa/midterm1_project:1.0
+        container_name: midterm1_project-app
+        ports:
+            - "5000:5000"
+...
