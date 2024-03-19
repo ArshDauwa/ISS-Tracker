@@ -18,14 +18,14 @@ def test_server_response(client):
         assert b"Welcome to the ISS Tracker API!" in response.data
     elif response.status_code == 404:
         print("Flask app is not running.")
-        assert True  # Still pass the test if Flask app is not running
+        assert True  
     else:
         assert False
 def check_response(response, endpoint):
     if response.status_code == 404:
         pytest.xfail(f"The '{endpoint}' endpoint is not implemented")
     assert response.status_code == 200
-    # Add more assertions based on the expected behavior of the endpoint
+    
 
 def test_epochs_endpoint(client):
     response = client.get('/epochs')
