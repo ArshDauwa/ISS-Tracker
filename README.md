@@ -38,6 +38,28 @@ Click the link above to download the data and save it to the same folder as your
 </details>
 
 <details>
+<summary>Unit Test</summary>
+- First, after check to see if any things are up and running with:
+
+```docker ps -a```
+
+  - Close all servers with:
+    
+  ``` docker stop <Container ID> ```
+  
+- Next, start the service in the background with the command:
+
+  ``` docker-compose up -d ```
+  
+- Once that is up and running, navigate to the directory with the Unit test (test_iss_tracker.py) and the iss_tracker.py files.
+- Run the command:
+
+``` pytest -v ```
+
+  - This should run all the unit test associated with this flask app.
+
+
+<details>
 <summary>Routes and Outputs</summary>
 
 ### Once your Flask app is running properly, you can curl several endpoints using the command:
