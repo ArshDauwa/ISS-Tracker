@@ -218,6 +218,14 @@ null,"==========================================================================
 </details>
 
 
+<img width="1121" alt="diagram" src="https://github.com/ArshDauwa/ISS-Tracker/assets/127358497/e8a70d80-0c33-4312-bb59-54f58f26f4fa">
+
+The software diagram illustrates the architecture of the project. It consists of three main components: the NASA data API, the Flask app, and the unit testing module. The NASA data API serves as the source of data, providing information about the International Space Station's trajectory. This data is accessed by the Flask app through API calls. The Flask app contains various routes that handle different requests, such as querying specific epochs or retrieving location information. Additionally, the Flask app is subjected to unit testing, ensuring the accuracy and reliability of its functionality. Finally, the unit testing module evaluates the Flask app's performance, providing feedback on whether the tests pass or fail.
+
+
+
+
+
 
 
 
