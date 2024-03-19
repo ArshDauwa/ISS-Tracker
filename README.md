@@ -56,9 +56,8 @@ Click the link above to download the data and save it to the same folder as your
 
 ``` pytest -v ```
 
-  - This should run all the unit test associated with this flask app.
-
-
+  - This should run all the unit tests associated with this flask app.
+</details>
 <details>
 <summary>Routes and Outputs</summary>
 
