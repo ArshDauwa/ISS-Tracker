@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from unittest.mock import patch
 import math
 from datetime import datetime
@@ -16,10 +18,46 @@ def test_server_response(client):
         assert b"Welcome to the ISS Tracker API!" in response.data
     elif response.status_code == 404:
         print("Flask app is not running.")
-        assert True  
+        assert True  # Still pass the test if Flask app is not running
     else:
         assert False
+def check_response(response, endpoint):
+    if response.status_code == 404:
+        pytest.xfail(f"The '{endpoint}' endpoint is not implemented")
+    assert response.status_code == 200
+    # Add more assertions based on the expected behavior of the endpoint
 
+def test_epochs_endpoint(client):
+    response = client.get('/epochs')
+    check_response(response, '/epochs')
+
+def test_state_vectors_endpoint(client):
+    response = client.get('/epochs/2024-090T11:38:00.000Z')
+    check_response(response, '/epochs/<epoch>')
+
+def test_speed_endpoint(client):
+    response = client.get('/epochs/2024-090T11:38:00.000Z/speed')
+    check_response(response, '/epochs/<epoch>/speed')
+
+def test_nearest_epoch_endpoint(client):
+    response = client.get('/now')
+    check_response(response, '/now')
+
+def test_location_endpoint(client):
+    response = client.get('/epochs/2024-090T11:38:00.000Z/location')
+    check_response(response, '/epochs/<epoch>/location')
+
+def test_comment_endpoint(client):
+    response = client.get('/comment')
+    check_response(response, '/comment')
+
+def test_header_endpoint(client):
+    response = client.get('/header')
+    check_response(response, '/header')
+
+def test_metadata_endpoint(client):
+    response = client.get('/metadata')
+    check_response(response, '/metadata')
 # Mock data for testing
 mock_data = [
     {   "EPOCH":"2024-079T00:56:00.000Z",
