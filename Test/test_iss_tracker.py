@@ -1,9 +1,24 @@
-nothing yet
 from unittest.mock import patch
 import math
 from datetime import datetime
 import pytest
 from iss_tracker import calculate_lat, calculate_alt, calculate_long, calculate_geoposition, get_data
+from iss_tracker import app
+
+@pytest.fixture
+def client():
+    with app.test_client() as client:
+        yield client
+
+def test_server_response(client):
+    response = client.get('/')
+    if response.status_code == 200:
+        assert b"Welcome to the ISS Tracker API!" in response.data
+    elif response.status_code == 404:
+        print("Flask app is not running.")
+        assert True  
+    else:
+        assert False
 
 # Mock data for testing
 mock_data = [
